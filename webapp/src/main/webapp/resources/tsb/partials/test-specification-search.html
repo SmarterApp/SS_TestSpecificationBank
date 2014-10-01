@@ -1,0 +1,124 @@
+<div class="secondary">
+    <div class="secContent"> 
+        <div class="boxTitle"><h2>Specification Search</h2></div>
+
+        <div>
+            <div data-searchable data-search-promise="searchSpecs(params)" data-search-params="searchParams" 
+                    data-search-response="searchResponse" data-search-post-process="postProcessSpecs(response)" data-broadcast-signal="initiate-specification-search">
+                <div class="fieldGroup">
+                <h5>Search Filters</h5>
+                    <div data-error-panel data-error-list="errors"></div>
+                    <ul>
+                        <li>
+                            <span>
+                                <label for="name ">Name:</label>
+                                <input name="name" data-ng-model="searchParams.name"/>
+                            </span>
+                        </li>
+                        <li>
+                            <span> 
+                                  <label for="version">Version:</label>
+                                  <input name="version" data-ng-model="searchParams.version"/>
+                            </span>
+                        </li>
+                        <li>
+                            <span> 
+                                  <label for="purpose">Purpose:</label>
+                                  <select data-ng-model="searchParams.purpose" data-ng-options="purpose for purpose in specPurposes">
+                                    <option value="">Select...</option>
+                                </select>
+                            </span>
+                        </li>
+                        <li>
+                            <span> 
+                                  <label for="label">Label:</label>
+                                  <input name="label" data-ng-model="searchParams.label"/>
+                            </span>
+                        </li>
+                        <li>
+                            <span> 
+                                  <label for="exportPackageStatus">Export Status:</label>
+                                  <select data-ng-model="searchParams.exportPackageStatus" data-ng-options="status for status in exportStatuses">
+                                    <option value="">Select...</option>
+                                </select>
+                            </span>
+                        </li>
+                        <li>
+                            <span> 
+                                  <label for="retired">Retirement Status:</label>
+                                  <select data-ng-model="searchParams.retired" data-ng-options="rOption.key as rOption.label for rOption in retiredOptions">
+                                    <option value="">Show All...</option>
+                                </select>
+                            </span>
+                        </li>
+                    </ul>
+                    <button type="button" type="button" class="boxBtn" data-search-on-click>
+                        <span class="btnIcon icon_sprite icon_reTry2 ng-class:{ajax_indicator:searchResponse.searching}"></span>
+                        <span class="btnText">Search</span>
+                    </button>
+                </div>
+                        
+                <div data-pageable data-paging-info="searchResponse" data-search-params="searchParams" data-change-page="changePage()">
+                    <table class="dataTable">
+                        <colgroup>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col class="tripleActionColumn">
+                        </colgroup>
+                        <tr>
+                            <th data-sort-on-click data-sort-column="name" class="headerSortUp">Name</th>
+                            <th data-sort-on-click data-sort-column="label">Label</th>
+                            <th data-sort-on-click data-sort-column="version">Version</th>
+                            <th data-sort-on-click data-sort-column="purpose">Purpose</th>
+                            <th data-sort-on-click data-sort-column="subjectName">Subject</th>
+                            <th data-sort-on-click data-sort-column="grade">Grade</th>
+                            <th data-sort-on-click data-sort-column="type">Type</th>
+                            <th data-sort-on-click data-sort-column="category">Category</th>
+                            <th data-sort-on-click data-sort-column="exportPackage.status">Export Status</th>
+                            <th data-sort-on-click data-sort-column="retired">Status</th>
+                            <th></th>
+                        </tr>
+                        <tr data-ng-repeat="spec in searchResponse.searchResults">
+                            <td>{{spec.name}}</td>
+                            <td>{{spec.label}}</td>
+                            <td>{{spec.version}}</td>
+                            <td>{{spec.purpose}}</td>
+                            <td>{{spec.subjectName}}</td>
+                            <td>{{spec.grade.join(', ')}}</td>
+                            <td>{{spec.type}}</td>
+                            <td>{{spec.category}}</td>
+                            <td>{{spec.exportPackage.status}}<span data-ng-show="spec.exportPackage && (spec.exportPackage.status != 'COMPLETE' && spec.exportPackage.status != 'FAILED')"><img src="resources/tsb/images/loading-small.gif" alt="" /></span></td>
+                            <td>{{spec.retired ? 'Retired' : 'Active'}}</td>
+                            <td class="normalSpace">
+        	                   <div class="tableButtonGroup">
+        	                       <button data-ng-click="view(spec)" class="boxBtn" title="View Details">
+                                        <span class="btnIcon icon_sprite icon_preview2"></span>
+                                    </button>    
+                                   <button data-ng-hide="spec.retired || spec.exportPackage" data-ng-click="requestExport(spec)" class="boxBtn" title="Request Export">
+                                       <span class="btnIcon icon_sprite icon_upload2"></span>
+                                   </button>  
+                                   <button data-ng-show="spec.exportPackage.status != 'SUBMITTED' && spec.exportPackage.status != 'PENDING_ITEM_EXPORT' && spec.exportPackage.status != 'PENDING_PACKAGE_CREATION' && spec.exportPackage.status != 'PENDING_SFTP' && !spec.retired && isAdminUser" data-ng-click="retireSpec(spec)" class="boxBtn" title="Retire Specification">
+                                       <span class="btnIcon icon_sprite icon_node2"></span>
+                                   </button>  
+                                   <button data-ng-show="spec.exportPackage.status != 'SUBMITTED' && spec.exportPackage.status != 'PENDING_ITEM_EXPORT' && spec.exportPackage.status != 'PENDING_PACKAGE_CREATION' && spec.exportPackage.status != 'PENDING_SFTP' && spec.retired && isAdminUser" data-ng-click="retireSpec(spec,true)" class="boxBtn" title="Restore Specification">
+                                       <span class="btnIcon icon_sprite icon_grade2"></span>
+                                   </button>                        
+        	                   </div>
+        	               </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clear"></div>

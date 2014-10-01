@@ -1,0 +1,1192 @@
+
+legend {
+	margin:10px;
+	padding:10px;
+	background-color:white;
+}
+
+h3 {
+	text-align: center;
+}
+
+h5 {
+	font-size: 1.15em;
+}
+
+.home .manageAssessments span {
+    background: url("../images/ManageAssessments.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    display: block;
+}
+.home .manageAssessments:hover span {
+    background: url("../images/ManageAssessments_over.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+}
+
+.boxBtnTiny {
+	width:30px;
+	height:30px;
+}
+
+.secContent {
+  margin: 1em 3em 2em 0;
+  padding: 1em 1em 0 2em;
+  margin-left: 0;
+}
+
+.file-btn {
+    background-color: #666666;
+    color: #FFFFFF;
+    font-size: 1em;
+    font-weight: bold;
+	-moz-user-select: none;
+    border: 0;
+/*     border-radius: 4px; */
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.fieldGroup .itemBoxBtnTiny {
+    width:40px;
+    height:30px;
+    margin-top:0em;
+    margin-bottom:0em;
+    margin-right:10px;
+}
+
+.halfBtn {
+	width:30px;
+	height:20px;
+	margin-bottom: 0em;
+}
+
+.halfBtnDisabled {
+	width:30px;
+	height:20px;
+	margin-bottom: 0em;
+	color: gray;
+    background-color: #e5e5e5;
+}
+
+.itemSelectionListSelector {
+    border: 1px solid #B8B7A4;
+    border-radius: 6px;
+    float: right;
+    top: inherit;
+    margin-right: 413px;
+	top: -200px;
+    padding: 7px;
+    position: relative;
+    width: 20%;
+}
+
+.icon-up {
+    display:inline-block;
+    vertical-align:middle;
+    padding:0px!important;
+	background: url("../images/glyphicons-halflings.png") no-repeat scroll right;
+    background-position: -288px -120px;
+    line-height: 14px;
+    height: 14px;
+    width: 14px;
+}
+
+.icon-down {
+    display:inline-block;
+    vertical-align:middle;
+    padding:0px!important;
+	background: url("../images/glyphicons-halflings.png") no-repeat scroll right;
+    background-position: -312px -120px;
+    line-height: 14px;
+    height: 14px;
+    width: 14px;
+}
+
+.nav, .pagination, .carousel a { 
+    cursor: pointer; 
+}
+
+.boxBtn {
+  margin:.5em;
+}
+
+.dataTable, .itemPoolSelectTable {
+    table-layout:fixed;
+    width:100%;
+}
+
+.dataTable th.noSort {
+	cursor:auto;
+    text-decoration:none;
+}
+
+.dataTable td span.editable-wrap {
+	width:100%;
+	display:inline;
+}
+
+
+
+.dataTable tr.hasError {
+    background-color:#FFDBDB;
+}
+
+.dataTable td.hasError {
+    background-color:#FF8F8F;
+}
+
+.dataTable td.hasSevereError {
+    background-color:red;
+}
+.editable-error{
+	color:red;
+}
+
+.tabWithError {
+	background-color:#FFDBDB;
+}
+
+.dataTable td, .itemPoolSelectTable td {
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+}
+
+.dataTable td.normalSpace, .itemPoolSelectTable td.normalSpace {
+    white-space:normal;
+}
+
+.dataTable input {
+	width:90%;
+	text-align:center;
+}
+
+.itemPoolSelectTable td.normalSpaceCenter {
+    white-space:normal;
+    text-align:center;
+}
+
+.tableButtonGroup {
+    display:inline-table;
+}
+
+.dataTable .boxBtn, .itemPoolSelectTable .boxBtn {
+    width:30px;
+    height:30px;
+    margin:3px;
+    padding:0px;
+}
+
+.smallButton {
+    width:30px;
+    height:30px;
+    margin:0px;
+    padding:0px;
+}
+
+.dataTable .boxBtnShort, .sortableTable .boxBtnShort {
+    width:30px;
+    height:22px;
+    margin:0px;
+    padding:0px;
+}
+
+table .icon_sprite {
+    margin:0px;
+    padding:0px;
+}
+
+table .doubleActionColumn {
+    width:93px;
+    white-space:normal;
+}
+
+table .actionColumn {
+    width:40px;
+}
+
+table .tripleActionColumn {
+    width:130px;
+    white-space:normal;
+}
+
+table span.editable, table a.editable {
+	color:#660033;
+	font-weight:bold;
+	cursor:text;
+}
+
+#tableNav th {
+    width:50%;
+    border: 0px;
+}
+
+#tableNav input {
+    width:35px;
+    margin:0px;
+}
+
+#tableNav tr :first-child {
+    text-align:left;
+}
+
+#tableNav tr :last-child {
+    text-align:right;
+}
+
+.ajax_indicator {
+    background-position:0px 0px;
+    background-image:url(../images/ajax-indicator.gif);
+}
+
+.ajax_indicator-horiz {
+    background-position:0px 0px;
+    background-image:url(../images/ajax-indicator-long.gif);
+    background-repeat: no-repeat;
+    background-position:center;
+    width:100%;
+    height:15px;
+    text-align: center;
+}
+  
+button:disabled {
+	background: none repeat scroll 0 0 #666666;
+    color: #FFFFFF;
+}
+  
+.boxBtn:hover .ajax_indicator {
+	background-position:0px 0px;
+    background-image:url(../images/ajax-indicator-green.gif);
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow: auto;
+}
+
+.tableWrapper.centered {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+div.ng-dirty, form.ng-dirty form .ng-dirty {
+    border:1px solid red;
+}
+
+div.select2-container {
+    border:none;
+    margin-left:.7em;
+}
+li.select2-search-choice {
+    width:auto!important;
+    margin: 3px 3px 3px 5px!important;
+}
+li.select2-search-choice div {
+    margin:0;
+    text-align:left;
+}
+li.select2-search-field input {
+    float:left;
+}
+
+.formWrapper {
+    padding:0px;
+    width:100%;
+}
+
+.content {
+    padding:0em 2%;
+}
+
+.formWrapper .dirtynag{
+    color:red;
+    text-align:left;
+    font-weight: bold;
+}
+
+textarea.large {
+    width:98%;
+    height:400px;
+}
+  
+.expander-closed {
+    background-position: center bottom;
+}
+
+.expander-open {
+    background-position: center top;
+}
+
+tr.expander td {
+       white-space: normal;
+}
+
+.thumbnail {
+    margin: 0.1em;
+    padding: 0;
+    width: 11em;
+}
+
+.thumbnailColumn {
+    padding:0;
+    margin:0;
+    width: 12em;
+}
+
+td.thumbnailColumn {
+    padding: 0px;
+    margin : 0px;
+}
+
+.highlight {
+    background-color:#f4f4f4;
+}
+
+.informational {
+    text-align: left;
+}
+
+div.two-section {
+    width:48%; 
+    float:left;
+}
+
+.fieldGroup li {
+	white-space:nowrap;
+    vertical-align:top;
+}
+
+.fieldGroup li span{
+	text-align:right;
+    float:left;
+    width:80%;
+}
+
+.fieldGroup li span span.subjectEditable {
+    text-align:left;
+    float:none;
+}
+
+.fieldGroup label {
+    display:inline-block;
+    float:none;
+    vertical-align:top;
+}
+.boldLabels label {
+    font-weight:bold;
+}
+.fieldGroup select, .fieldGroup input, .fieldGroup textarea, .fieldGroup span.propertyBox {
+    display:inline-block;
+    vertical-align:top;
+}
+
+.fieldGroup input.hasError, .fieldGroup select.hasError {
+    background-color:#FF8F8F;
+}
+
+.fieldGroup select {
+	width:157px;
+}
+
+.fieldGroup .scoringSelect select {
+    width:120px;
+}
+
+.fieldGroup textarea, .fieldGroup span.propertyBox, fieldSet input.normalWidth {
+    float:none;
+	width: 154px;
+    margin-left:0.7em;
+}
+
+.fieldGroup span.propertyBox {
+    text-align:left;
+}
+
+.fieldGroup textarea {
+    padding: 0.1em;
+}
+
+.fieldGroup li span.wide-fields {
+    width:100%;
+}
+
+a.fieldLink {
+    color: #0883B0;
+}
+
+.fieldGroup a.fieldLink:hover {
+    color: #CCCCCC;
+}
+
+.fieldGroup span.subGroup {
+    float: right;
+    width: 300px; 
+    margin-left: 0.7em; 
+    padding: 0.1em;
+}
+
+.fieldGroup .editable  {
+    width:80%;
+    float:none;
+    text-align:left;
+}
+
+.fieldGroup .editable-wrap  {
+    width:80%;
+    float:none;
+    text-align:left;
+}
+
+.fieldGroup .editable-controls  {
+    width:auto;
+    float:none;
+    text-align:left;
+}
+
+
+.fieldGroup ul.oneCol li {
+    width:100%;
+}
+
+.fieldGroup ul.oneCol li label {
+    width:35%;
+    text-align: left;
+}
+
+.fieldGroup span.subText, .fieldGroup span.subText i {
+	float:right;
+}
+
+.section .fieldGroup .boxBtn {
+    width: 42%;
+}
+
+.fieldGroup .buttons .boxBtn {
+    width: 50%;
+}
+
+.fieldGroup .tenantAccessList button {
+	margin: 0 0 0 .5em;
+    width:39px;
+    height:30px;
+}
+
+.fieldGroup .tenantAccessList label {
+    width:80%;
+    text-align:left;
+}
+
+.fieldGroup .tenantAccessList span {
+    width:100%;
+    text-align:right;
+}
+
+.fieldGroup .giveTenantAccess button {
+	float:right;
+	margin: 0 0 0 .5em;
+	width:80px;
+    height:30px;
+}
+
+.fieldGroup .giveTenantAccess a {
+	width:auto;
+	float:none;
+}
+
+.fieldGroup .giveTenantAccess span.subGroup {
+    width:auto;
+    float:none;
+}
+
+.half {
+    width:48%;
+    float:left;
+    margin:.1em;
+}
+
+.half label {
+	margin-left:3em;
+}
+
+.half .editable-controls {
+	margin-left:3em;
+}
+
+.half .boxBtn {
+    width: 40%;
+}
+
+.quarter {
+    width:25%;
+    float:left;
+    margin:.1em;
+}
+
+.quarter .boxBtn {
+    width: 40%;
+}
+.threeQuarter {
+    width:73%;
+    float:left;
+    margin:.1em;
+}
+
+.datepicker li {
+    vertical-align:bottom;
+}
+
+.datepicker li span{
+    overflow: visible;
+}
+
+span.displayText{
+	padding-left: 3px;
+}
+
+.filterHeader {
+	text-align:left;
+	text-transform:uppercase;
+}
+
+.itemCountStats .section {
+	overflow-y: auto;
+}
+
+.itemCountStats li span {
+	text-align: left;
+	width: auto;
+}
+
+.itemPoolSelectTable input, .itemPoolSelectTable select  {
+     width: 100%; 
+     box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
+     margin:0;
+}
+
+.itemPoolSelectTable {
+    float:left;
+    margin:0px;
+    padding:0px;
+    width:100%;
+}
+.itemPoolSelectTable th{
+    border:1px solid #e4e4e4;
+    padding:0.3em;
+    vertical-align: middle;
+    color:#2779AA;
+}
+.itemPoolSelectTable td{
+    border:1px solid #e4e4e4;
+    padding:0.3em;
+    vertical-align: middle;
+}
+
+.itemPoolSelectTable td.thumbnailColumn{
+    border:1px solid #e4e4e4;
+    vertical-align: middle;
+}
+
+.itemPoolSelectTable td div{
+    float:left;
+    text-align:left;
+}
+.itemPoolSelectTable td div div{
+    float:none;
+    padding-bottom: 3px;
+}
+
+.itemPoolSelectTable td {
+    text-align:left;
+}
+
+.itemPoolSelectTable td div{
+    float:left;
+    text-align:left;
+}
+
+.itemPoolSelectTable input {
+    width:90%;
+}
+
+.selectedItemRow {
+    background: #E1EEF5;
+}
+
+.tenantTypeSelector {
+    width:auto;
+    border:1px solid #18567E;
+    padding:4px;
+    text-align:center;
+}
+
+.tenantTypeSelector div.fieldGroup li {
+    width:100%
+}
+
+.tenantTypeSelector div.fieldGroup li span {
+    width:100%;
+    text-align:left;
+}
+
+ul.propertyList label {
+	font-weight:bold;
+}
+
+ul.split-list li {
+    white-space:normal;
+    width:49%;
+}
+ul.one-column.width600{
+    width:600px;
+}
+ul.one-column li {
+    width:100%;
+}
+ul.one-column li.centered {
+    width:auto;
+    min-width:80%;
+    display:inline-block;    
+}
+ul.one-column li span {
+    width:90%;
+}
+
+ul.export-details {
+    width:1000px;
+}
+ul.export-details li {
+    width:auto;
+    min-width:85%;
+    display:inline-block;   
+}
+ul.export-details li span {
+    width:100%;
+    text-align:left;
+}
+
+fieldset { 
+	border: 1px solid #18567E;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px #D1D3D4;
+	margin: 15px; 
+	padding: 0; 
+}
+
+fieldset li {
+    list-style-type: none;
+    padding: 1em;
+    text-align: center;
+    display: block;
+}
+    
+fieldset input {
+	width:175px;
+}
+fieldset h4 {
+    color: #18577E;
+    font: bold 1.2em/1.2;
+    padding: 0.3em 0 0.6em 0;   
+    margin: 0;
+}
+
+i.plusMin.expanded {
+    background-position:top;
+}
+i.plusMin.collapsed {
+    background-position:bottom;
+}
+
+.treeExpander{
+     height:16px;
+     width:16px;
+     display:inline-block;
+     background-image:url(../images/plusMin2.png);
+     background-position:bottom;
+     background-repeat:no-repeat;
+     opacity:.6;
+     cursor:pointer;
+ }
+ 
+i.treeExpander.expanded {
+    background-position:top;
+}
+i.treeExpander.collapsed {
+    background-position:bottom;
+}
+
+td .tree-expanded {
+	height:16px;
+    width:16px;
+    display:inline-block;
+    background-image:url(../images/expanded.png);
+    background-position:bottom;
+    background-repeat:no-repeat;
+    opacity:.6;
+}
+
+td.ellipse {
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    word-wrap:normal;
+    overflow:hidden;
+}
+
+td.indent1 {
+    padding-left:.3em;
+}
+td.indent2 {
+    padding-left:2em;
+}
+td.indent3 {
+    padding-left:3.7em;
+}
+td.indent4 {
+    padding-left:5.4em;
+}
+td.indent5 {
+    padding-left:7.1em;
+}
+td.indent6 {
+    padding-left:8.7em;
+}
+td.indent7 {
+    padding-left:10.4em;
+}
+td.indent8 {
+    padding-left:12.1em;
+}
+
+
+.disabledSearch {
+    background-color:#DEDEDE;
+    border:1px solid gray;	
+}
+
+.bpeDetails {
+    margin-top:0.2em;
+    background-color:#F5F5F5;
+    border:1px solid gray; 
+    padding:0.5em; 
+}
+
+.section {
+    float:left; 
+    width:85%;
+    text-align:left;
+    padding:8px;
+}
+
+
+.withHeader {
+	margin-top:0px;
+}
+
+div.tabInfo {
+	float:left;
+}
+div.tabInfo a {
+    color:#0883B0;
+}
+
+.entryArea {
+	border:4px solid #FFFFFF;
+/*     color:#E3F1FA; */
+	background:#FFFFFF;
+	border-radius: 5px;
+	width: 99%;
+}
+
+.entryArea li select {
+	width:190px;
+}
+
+.entryArea .icon_sprite  {
+    height:25px;
+	width:25px;
+    display:inline-block;
+    vertical-align:middle;
+    padding:0px!important;
+}
+
+button.side2 {
+	width: 22%;
+}
+
+label.side1 {
+	width: 17em;
+}
+
+label.side2 {
+	width: 20em;
+}
+
+.entryArea ul {
+	max-width: 100%;
+}
+
+.entryArea .btnText {
+	float:inherit;
+	text-align: left;
+}
+
+.entryArea li span .hasError {
+    background-color:#FF8F8F;
+}
+
+.entryArea li span input:disabled, .entryArea li span textarea:disabled, .entryArea li span select:disabled {
+    background-color:#EBF2F6;
+}
+
+.entryArea li span a {
+    color:#E3F1FA;
+    text-decoration: underline;
+}
+
+.entryArea li span.fileinput-button {
+	width: 55%;
+}
+
+.entryArea li span a:hover {
+    color:#3DB11A;
+    text-decoration: none;
+}
+
+.sortableTable {
+	width:100%;
+	margin-top:.5em;
+    text-align: center;
+}
+.sortableTable th {
+    color:#FFFFFF;
+	background:#3DB11A;
+    padding:0.3em;
+    vertical-align: middle;
+}
+.sortableTable tbody tr {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #444;
+	border-radius: 5px;
+	background-color: #E3F1FA;
+	text-align: center;
+    width: 100%;
+}
+.sortableTable td {
+    border:1px solid #e4e4e4;
+    padding:0.3em;
+    text-align:left;
+    vertical-align: middle;
+}
+.sortableTable select {
+    margin-left:.25em;
+}
+.sortableTable td span.property {
+	color: #18577E;
+	font-weight:bold;
+}
+.sortableTable td div {
+	float:left;
+	text-align:left;
+}
+.sortableTable td div div{
+    float:none;
+    padding-bottom: 3px;
+}
+.sortableTable td div pre {
+    background-color: #eaeaea;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0;
+    padding: .25em;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    min-height:1.5em;
+}
+.sortableTable th.noSort {
+	cursor:auto;
+    text-decoration:none;
+}
+
+.sortableTable tr.hasError {
+    background-color:#FFDBDB;
+}
+
+.sortableTable td.hasError {
+    background-color:#FF8F8F;
+}
+
+.sortableTable td.hasSevereError {
+    background-color:red;
+}
+
+.sortableTable td input:disabled, .sortableTable td select:disabled, .sortableTable td textarea:disabled {
+    background-color:#EBF2F6;
+}
+.sortableTable .boxBtn  {
+    width:30px;
+    height:30px;
+    margin:5px;
+	padding:0px;
+}
+
+.sortableListIcon {
+	background: url("../images/glyphicons-halflings.png") no-repeat scroll -432px -120px transparent;
+	position: relative;
+	margin: 0px 5px 0px 5px;
+	line-height: 15px;
+	height: 15px;
+	width: 15px;
+	border: 2px solid rgb(39, 121, 170);
+	border-radius: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.sortableListIcon2 {
+	background: url("../images/glyphicons-halflings.png") no-repeat scroll -432px -120px transparent;
+	position: relative;
+	cursor: move;
+	margin: 0px 5px 0px 0px;
+	line-height: 15px;
+	height: 15px;
+	width: 15px;
+	border: 2px solid rgb(39, 121, 170);
+	border-radius: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+.roomy {
+	width: 14em;
+}
+
+textarea.mid {
+    width:80%;
+    height:5em;
+}
+
+.narrow {
+    width:40px;
+}
+
+.tabIcon, .tabTitle {
+	display:inline-block; 
+	padding:0px;
+	vertical-align: middle;
+}
+
+.narrow input {
+    width:50px;
+}
+
+.wide input {
+    width:95%;
+}
+
+div.errorBox {
+	border: 4px solid red;
+    color: #FF3333;
+	background: #FFDBDB;
+    padding: 0.3em;
+	width: 99%;
+	margin-top: .5em;
+    text-align: center;
+}
+div.errorBox div.centered {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+div.errorBox div.pageWidth {
+    width:800px;
+}
+div.errorBox div.leftAligned {
+    text-align:left;
+}
+div.errorBox div.offset{
+    margin-left: 275px;
+}
+
+.noneListed {
+    height:50px;
+    padding:10px;
+    margin-left:3em;
+}
+
+.parameterGroup { white-space:nowrap; vertical-align:top; width: 100%; }
+.parameterGroup label { display:inline-block; float:none; vertical-align:top; width:20%; text-align: right; white-space: nowrap; }
+.parameterGroup select, .parameterGroup input, .parameterGroup textarea, .parameterGroup span.propertyBox {
+	display:inline-block;
+	vertical-align:middle;
+	margin-bottom: 5px;
+	text-align: left;
+	width: 43%;
+}
+.parameterGroup select { width:157px; }
+.parameterGroup textarea, .parameterGroup span.propertyBox { float:none; width: 154px; margin-left:3em; }
+.parameterGroup span.propertyBox { text-align:left; }
+.parameterGroup textarea { padding: 0.1em; }
+.parameterGroup li span.wide-fields { width:100%; }
+.parameterGroup a.fieldLink { color: #0883B0; }
+.parameterGroup a.fieldLink:hover { color: #CCCCCC; }
+.parameterGroup span.subGroup { float: right; width: 300px; margin-left: 0.7em; padding: 0.1em; }
+.parameterGroup .editable  { width:80%; float:none; text-align:left; }
+.parameterGroup .editable-wrap  { width:80%; float:none; text-align:left; }
+.parameterGroup .editable-controls  { width:auto; float:none; text-align:left; }
+.parameterGroup div .hasError {
+    color:#FF8F8F;
+	background-color:#FFDBDB;
+}
+
+.parameterElement {
+	border: 3px solid #E3F1FA;
+    border-radius: 6px;
+    display: inline-block;
+    width: 75%;
+    margin-bottom: 5px;
+    white-space: nowrap;
+}
+
+.sortable-row-heading {
+	margin: 20%;
+	height: 20px;
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+}
+
+.sortable-row {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid #444;
+	border-radius: 5px;
+	background-color: #E3F1FA;
+	cursor: move;
+	height: 30px;
+	text-align: left;
+}
+
+.sortable-row button {
+	width: 30px;
+	margin-top: 2px;
+}
+
+.move-cursor {
+	cursor: move;
+}
+
+.default-cursor {
+	cursor: default;
+}
+
+.sortable-row-footer {
+	text-align: right;
+	padding-right: 3%;
+}
+
+ul.publishing li {
+	 display: inline-table;
+	 white-space: nowrap;
+}
+
+ul.publishing li label {
+	 text-align: right;
+	 padding-right: 5px;
+}
+
+.unavailable {
+	color: #DDDDDD;
+}
+
+li.queueEntry {
+	white-space:nowrap;
+	display:table;
+}
+
+.fileinput-button {
+	position: relative;
+	overflow: hidden;
+}
+
+.fileinput-button input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform: translate(-300px, 0) scale(4);
+	font-size: 23px;
+	direction: ltr;
+	cursor: pointer;
+}
+
+.specForm.fieldGroup ul {
+	max-width:1000px;
+}
+
+.specForm.fieldGroup label {
+	font-weight:bold;
+}
+
+.assessment_icon_sprite {
+    margin: 2px;
+    background-image: url(../images/icons_small.png);
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px!important;
+}
+
+.icon_test_details {
+    background-position: 0 0;
+}
+.icon_test_segment {
+    background-position: 0 -60px;
+}
+.icon_test_blueprint {
+    background-position: 0 -115px;
+}
+.icon_test_itempool {
+    background-position: 0 -175px;
+}
+.icon_test_enemylist {
+    background-position: 0 -710px;
+}
+.icon_test_forms {
+    background-position: 0 -235px;
+}
+.icon_test_scoring {
+    background-position: 0 -300px;
+}
+.icon_test_performance {
+    background-position: 0 -355px;
+}
+.icon_test_reporting {
+    background-position: 0 -415px;
+}
+.icon_test_publishing {
+    background-position: 0 -650px;
+}
+
+.footer .footerText {
+	color: white;
+	padding-top: 4px;
+}

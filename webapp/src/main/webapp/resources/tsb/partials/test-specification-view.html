@@ -1,0 +1,183 @@
+<div class="secondary">
+    <div class="secContent"> 
+        <div class="boxTitle"><h2>Specification Details</h2></div>
+        
+        <div data-error-panel data-error-list="errors"></div>
+        
+        <div class="formWrapper">
+            <form data-editable-form name="editableForm" data-onaftersave="save()" data-shown="isNew">    
+                <div class="fieldGroup specForm">
+                    <h5></h5>
+                    <ul>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.name">Name:</label>        
+                                <span class="propertyBox">{{testSpecification.name}}</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.label">Label:</label>
+                                <span class="propertyBox">{{testSpecification.label}}</span>                                    
+                            </span>                   
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.version">Version:</label>       
+                                <span class="propertyBox">{{testSpecification.version}}</span>                                    
+                            </span>
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.purpose">Purpose:</label>
+                                <span class="propertyBox">{{testSpecification.purpose}}</span>                                    
+                            </span>                   
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.subjectName">Subject:</label>
+                                <span class="propertyBox">{{testSpecification.subjectName}}</span>                                    
+                            </span>                   
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.grade">Grade(s):</label>
+                                <span class="propertyBox">{{testSpecification.grade.join(', ')}}</span>                                    
+                            </span>                   
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.type">Type:</label>
+                                <span class="propertyBox">{{testSpecification.type}}</span>                                    
+                            </span>                   
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.category">Category:</label>
+                                <span class="propertyBox">{{testSpecification.category}}</span>                                    
+                            </span>                   
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.retired">Retirement Status:</label>
+                                <span class="propertyBox">{{testSpecification.retired ? 'Retired' : 'Active'}}</span>                                    
+                            </span>                   
+                        </li>
+                        <li>
+                            <span> 
+                                <label class="control-label" for="testSpecification.specificationXml">Spec XML:</label>
+                                <span class="propertyBox">
+                                    <a class="fieldLink" target="_blank" href="{{specXmlUrl}}">View</a>
+                                </span>
+                            </span> 
+                        </li>
+                        <li>
+                            <span class="tenantAccessList" data-ng-show="tenantSet.length > 0">
+                                <label class="control-label" for="tenantSet">Tenant Access List: </label>
+                                <span data-ng-repeat="tenant in tenantSet">
+                                <span class="propertyBox" data-ng-show="tenant.name != null">{{tenant.name}} - {{tenant.description}}</span>
+                                <button data-ng-show="editableForm.$visible && tenant.name != null" type="button" class="boxBtn" data-ng-click="removeTenantFromList(tenant.id)">
+                                    <span class="btnIcon icon_sprite icon_delete2"></span>
+                                </button>
+                                </span>
+                            </span> 
+                        </li>
+                        <li>
+                            <span class="giveTenantAccess" data-ng-show="editableForm.$visible">
+				                <label class="control-label" for="addTenant">Give Tenant Access: </label>
+				                <span data-tenant-auto-complete data-tenant-model="selectedTenant" data-tenant-type="{{selectedTenantType}}"></span>
+				                
+				                <br />
+				                
+                                <button type="button" class="boxBtn" data-ng-click="addTenantToList()">
+                                    <span class="btnIcon icon_sprite icon_save2" style="width:25px"></span> <span class="btnText" style="width:35px">Add</span>
+                                </button>
+				                <a class="fieldLink" data-tenant-type-modal data-selected-tenant-type="selectedTenantType" href="">
+				                    <span class="subGroup" data-ng-show="!selectedTenantType">Filter</span>
+				                    <span class="subGroup" data-ng-show="selectedTenantType">Filtered By: {{selectedTenantType}}</span>
+				                </a>
+				                <span class="editable-error ng-binding" >{{errorsMap['tenantId'][0]}}</span>
+			                </span>
+                        </li>
+                    </ul>
+                    
+                    <ul class="export-details" data-ng-if="testSpecification.exportPackage">
+                        <fieldset>
+                            <h4>Packaging Details</h4>
+                            <li class="centered">
+                                <span>
+                                    <label class="control-label" for="testSpecification.exportPackage.status">Status:</label>
+                                    <span class="propertyBox">{{testSpecification.exportPackage.status}}<img src="resources/tsb/images/loading-small.gif" alt=""  data-ng-show="testSpecification.exportPackage && (testSpecification.exportPackage.status != 'COMPLETE' && testSpecification.exportPackage.status != 'FAILED')" /></span> 
+                                </span>
+                            </li>
+                            <li class="centered" data-ng-if="testSpecification.exportPackage.statusMessage">
+                                <span>
+                                    <label class="control-label" for="testSpecification.exportPackage.statusMessage">Status Message:</label>
+                                    <span class="propertyBox" data-tooltip="{{testSpecification.exportPackage.statusMessage}}" data-tooltip-placement="right" data-tooltip-append-to-body="true" data-tooltip-popup-delay="200" style="width:67%;text-overflow:ellipsis;white-space:nowrap;word-wrap:normal;overflow:hidden;">{{testSpecification.exportPackage.statusMessage}}</span> 
+                                </span>
+                            </li>
+                            <li class="centered">
+                                <span>
+                                    <label class="control-label" for="testSpecification.exportPackage.timeRequested">Request Time:</label>
+                                    <span class="propertyBox">{{testSpecification.exportPackage.timeRequested | date:'MMMM d, y h:mm:ss a'}}</span>
+                                </span>
+                            </li>
+                            <li class="centered">
+                                <span>
+                                    <label class="control-label" for="testSpecification.exportPackage.zipFileName">File Name:</label>
+                                    <span class="propertyBox">{{testSpecification.exportPackage.zipFileName}}</span> 
+                                </span>
+                            </li>
+                            <li class="centered">
+                                <span>
+                                    <label class="control-label" for="testSpecification.exportPackage.exportCompleted">Complete Time:</label>
+                                    <span class="propertyBox">{{testSpecification.exportPackage.exportCompleted | date:'MMMM d, y h:mm:ss a'}}</span> 
+                                </span>
+                            </li>
+                            <span data-ng-if="testSpecification.exportPackage.tibExportDetails">
+                                <h4>Item Packaging Details</h4>
+                                <li class="centered">
+                                    <span>
+                                        <label class="control-label" for="testSpecification.exportPackage.tibExportDetails.status">TIB Export Status:</label>
+                                        <span class="propertyBox">{{testSpecification.exportPackage.tibExportDetails.status}}</span>
+                                    </span>
+                                </li>
+                                <li class="centered" data-ng-if="testSpecification.exportPackage.tibExportDetails.status == 'EXPORT_COMPLETE'">
+                                    <span>
+                                        <label class="control-label" for="testSpecification.exportPackage.tibExportDetails.completedItems">Download Status:</label>
+                                        <span class="propertyBox">{{testSpecification.exportPackage.tibExportDetails.downloadComplete ? 'Complete' : 'In Progress'}}</span>
+                                    </span>
+                                </li>
+                            </span>
+                        </fieldset>
+                    </ul>
+                    
+			        <span data-ng-show="!editableForm.$visible">
+			             <button data-ng-show="!isSubmitted() && !testSpecification.retired && isAdminUser" type="button" class="boxBtn" data-ng-click="edit()" >
+			                <span class="btnIcon icon_sprite icon_edit2 ng-class:{ajax_indicator:savingIndicator}" ></span>
+			                <span class="btnText">Edit</span>
+			            </button>
+			            <button type="button" class="boxBtn" data-ng-disabled="editableForm.$waiting" data-ng-click="back()">
+			                    <span class="btnIcon icon_sprite icon_reTry2" ></span>
+			                    <span class="btnText">Back</span>
+			            </button>
+			        </span>
+			        <span data-ng-show="editableForm.$visible">
+			            <button type="button" class="boxBtn" data-ng-disabled="editableForm.$waiting" data-ng-click="cancel()">
+			                    <span class="btnIcon icon_sprite icon_reTry2" ></span>
+			                    <span class="btnText">Back</span>
+			            </button>
+			        </span> 
+                    <span data-ng-if="!isSubmitted() && !testSpecification.retired && testSpecification.exportPackage">
+                        <button type="button" class="boxBtn" data-ng-click="retry(testSpecification.id)">
+                            <span class="btnIcon icon_sprite icon_upload2" ></span>
+                            <span class="btnText">Export Again</span>
+                        </button>                
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="clear"></div>

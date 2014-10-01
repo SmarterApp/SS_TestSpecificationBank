@@ -1,0 +1,26 @@
+#created using websequencediagrams.com
+title Test Spec Bank
+ 
+participant "User" as U
+participant "Client Component" as CC
+participant "Test Spec Bank" as TSB
+participant "SFTP SITE" as SFTP
+
+note over CC, TSB
+TSB client component allows for save and query of test specifications
+Test Authoring application utilizes the TSB client for publishing
+Test Registration application utilizes the TSB client for specification search
+end note
+CC->TSB: publishTestSpecification(TestSpecBankClientObj testSpecification)
+TSB->CC:getTestSpecificationByTenantId(String tenantId, Map<String, String[]> parameterMap)
+
+note over U, CC, TSB
+User can search for test specifications, view a specific test specification and its XML, and request a 
+package export
+end note
+TSB->U: Search Test Specifications
+TSB->U: View Test Specification details and XML
+U->TSB: Request Test Package Export
+TSB->SFTP: Export Test Package
+TSB->U: View Test Package Export Status
+U-->TSB: Retry Export (if necessary)

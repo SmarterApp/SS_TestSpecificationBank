@@ -1,0 +1,14 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<name>Smarter Balanced #11 Test Spec Bank - Client Interface</name>
+	<artifactId>test-spec-bank-client-interfaces</artifactId>
+	<description>Test Specification Bank client interface</description>
+
+	<parent>
+		<groupId>org.opentestsystem.authoring</groupId>
+		<artifactId>test-spec-bank-parent</artifactId>
+		<version>R01.00.00</version>
+	</parent>
+</project>

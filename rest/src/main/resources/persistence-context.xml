@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:mongo="http://www.springframework.org/schema/data/mongo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.3.xsd">
+
+	<mongo:repositories base-package="org.opentestsystem.authoring.testspecbank.persistence" factory-class="org.opentestsystem.shared.search.persistence.SearchableRepositoryFactoryBean" />
+
+	<mongo:mongo id="tsb-mongo" replica-set="${tsb.mongo.hostname}">
+		<mongo:options auto-connect-retry="true" />
+	</mongo:mongo>
+
+	<mongo:db-factory id="mongoDbFactory" mongo-ref="tsb-mongo" dbname="${tsb.mongo.dbname}" username="${tsb.mongo.username}" password="${tsb.mongo.password}" />
+
+	<mongo:mapping-converter id="mongoMappingConverter" db-factory-ref="mongoDbFactory" base-package="org.opentestsystem.authoring.testspecbank.domain" />
+
+    <mongo:template id="mongoTemplate" db-factory-ref="mongoDbFactory" converter-ref="mongoMappingConverter" write-concern="SAFE" />
+
+	<mongo:gridFsTemplate id="gridFsTemplate" db-factory-ref="mongoDbFactory" converter-ref="mongoMappingConverter" />
+
+	<bean id="gridFsRepository" class="org.opentestsystem.authoring.testspecbank.persistence.GridFsRepositoryImpl" />
+    
+    <bean id="testPackagerSftpSessionFactory" class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory">
+        <property name="host" value="${tsb.sftp.host}"/>
+        <property name="port" value="${tsb.sftp.port:22}" />
+        <property name="user" value="${tsb.sftp.user}"/>
+        <property name="password" value="${tsb.sftp.pass}"/>        
+    </bean>
+    
+    <bean id="testItemBankSftpSessionFactory" class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory">
+        <property name="host" value="${tsb.tib.sftp.host}"/>
+        <property name="port" value="${tsb.tib.sftp.port:22}" />
+        <property name="user" value="${tsb.tib.sftp.user}"/>
+        <property name="password" value="${tsb.tib.sftp.pass}"/>          
+    </bean>
+
+</beans>
