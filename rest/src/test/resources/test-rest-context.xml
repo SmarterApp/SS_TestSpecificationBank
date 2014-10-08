@@ -33,6 +33,12 @@
         <constructor-arg value="org.opentestsystem.authoring.testspecbank.client.tib.TestItemBankClientInterface" />
     </bean>
     
+    
+    <bean id="tibRestTemplate" class="org.springframework.web.client.RestTemplate"/>
+    
+    <bean id="client" class="org.opentestsystem.authoring.testspecbank.client.tib.TestItemBankClient" />
+     
+         
     <bean id="testItemBankFileTransferService" class="org.mockito.Mockito" factory-method="mock">
         <constructor-arg value="org.opentestsystem.authoring.testspecbank.service.FileTransferService" />
     </bean>

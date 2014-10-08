@@ -6,7 +6,7 @@
 	<name>Smarter Balanced #11 Test Spec Bank - Parent Project</name>
 	<artifactId>test-spec-bank-parent</artifactId>
 	<groupId>org.opentestsystem.authoring</groupId>
-	<version>R01.00.00</version>
+	<version>R01.00.01</version>
 	<packaging>pom</packaging>
 	<description>Test Specification Bank</description>
 
@@ -29,9 +29,9 @@
     </properties>
 
     <scm>
-        <connection>scm:hg:https://bitbucket.org/sbacoss/testspecbank</connection>
-        <developerConnection>scm:hg:https://bitbucket.org/sbacoss/testspecbank</developerConnection>
-        <url>https://bitbucket.org/sbacoss/testspecbank</url>
+        <connection>scm:hg:https://bitbucket.org/sbacoss/testspecbank_release</connection>
+        <developerConnection>scm:hg:https://bitbucket.org/sbacoss/testspecbank_release</developerConnection>
+        <url>https://bitbucket.org/sbacoss/testspecbank_release</url>
     </scm>
 
 	<dependencies>
@@ -192,12 +192,5 @@
 		</dependency>
 	</dependencies>
 	
-	<distributionManagement>
-       <repository>
-            <id>central</id>
-            <name>libs-releases</name>
-            <url>http://airdev.artifactoryonline.com/airdev/libs-releases-local</url>
-        </repository>
-    </distributionManagement>
 	
 </project>

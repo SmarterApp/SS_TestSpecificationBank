@@ -10,7 +10,7 @@
 	<parent>
 		<groupId>org.opentestsystem.authoring</groupId>
 		<artifactId>test-spec-bank-parent</artifactId>
-		<version>R01.00.00</version>
+		<version>R01.00.01</version>
 	</parent>
 
 	<properties>
@@ -163,7 +163,7 @@
 						<include>*.dtd</include>
 					</schemaIncludes>
 					<generateDirectory>src/test/generated</generateDirectory>
-					<generatePackage>org.opentestsystem.authoring.testspecbank.generated</generatePackage>
+					<generatePackage>org.opentestsystem.authoring.testspecbank_release.generated</generatePackage>
 					<episode>false</episode>
 				</configuration>
 			</plugin>
