@@ -37,7 +37,36 @@ Note that the progman config variables required are found [here:](external_relea
 
 This run time parameter specifies the property configuration set stored in the running sb11-program-management instance which contains all of the needed properties to get this instance of sb11-test-spec-bank running. The third optional value example '`dev_tsb_overrides`' is a useful feature that allows for overrides: in this case, all properties contained in the property group '`tsb`' for level '`dev`' are used by default, except where property group '`dev_tsb_overrides`' has an overriding property value.
 
-**Note:** the progman config variables required are found [here:](external_release_docs/installation/tsb-progman-config.txt)
+**Note:** the progman config variables required are found at external_release_docs/installation/tsb-progman-config.txt. Descriptions of these values follow:
+
+* `tsb.security.idp=http://name.of.identity.provider.server/auth/saml2/jsp/exportmetadata.jsp?metalias=idp&realm=sbac` - URL of SSO IDP's metadata export file
+* `permission.uri=http://name.of.permissions.server/rest` - URI to Permissions REST interface
+* `component.name=TestSpecBank` - Must match the name in Permissions and Program Management applications
+* `tsb.mna.description=The Test Spec Bank Component` - TSB description for MNA logs
+* `mna.mnaUrl=http://name.of.mna.server/rest` - URL to MNA's REST interface
+* `mna.logger.level=[OFF | ERROR | WARN | INFO | DEBUG | TRACE | ALL] (default:ERROR)` - Error log items of this level or higher are to be sent to the MNA application.
+* `mna.clean.days=30 (default)` - Clear our MNA logs after this many days
+* `mna.clean.cron=0 0 0 * * ? (default)` - Cron job entry for MNA log cleaning schedule
+* `tsb.mongo.hostname= ` - TSB Mongo DB hostname`
+* `tsb.mongo.port=27017` - Mongo DB port
+* `tsb.mongo.username=` - Mongo DB username
+* `tsb.mongo.password=` - Mongo DB password
+* `tsb.mongo.dbname=tsb-dev` - Mongo DB database name
+* `tsb.dtd.url=http://name.of.test.authoring.server/rest/resources/dtd/testpackage_v_9_19_2013.dtd` - Test package DTD location
+* `tsb.rest.context.root=/rest/` - Root context of the TSB REST service
+* `tsb.minJs=true` - Whether to use minimized JavaScript in the browser, true to minify
+* `tib.tibUrl=http://name.of.test.item.bank.server/` - URL to TIB server
+* `tsb.sftp.host=` - TSB SFTP host
+* `tsb.sftp.port=22` - TSB SFTP port
+* `tsb.sftp.user=` - TSB SFTP account username
+* `tsb.sftp.pass=` - TSB SFTP account password
+* `tsb.sftp.dir=` - TSB SFTP account directory
+* `tsb.tib.sftp.host=` - TSB's TIB SFTP hostname
+* `tsb.tib.sftp.port=22` - TSB's TIB SFTP server port
+* `tsb.tib.sftp.user=` -  TSB's TIB SFTP account
+* `tsb.tib.sftp.pass=` -  TSB's TIB SFTP account password
+* `tsb.download.directory=` -  TSB's SFTP download directory
+* `tsb.export.cron.trigger=0,30 * * * * ?` - Cron to configure export frequency of test specifications 
 
 ### Domain Module
 The Domain module contains all of the domain beans used to model the Test Spec Bank data as well as code used as search beans to create MongoDB queries.
