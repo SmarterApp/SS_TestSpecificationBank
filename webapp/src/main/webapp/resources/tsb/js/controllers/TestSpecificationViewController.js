@@ -4,6 +4,8 @@ tsb.controller('TestSpecificationViewController',['$scope','$state', 'loadedData
 		$scope.testSpecification = loadedData.data;
         $scope.specXmlUrl = TestSpecificationService.getBaseUrl() + TestSpecificationService.getResource() + '/' + $scope.testSpecification.id + '/specXml';
         $scope.tenantIdSet = angular.copy($scope.testSpecification.tenantSet);
+		$scope.addingTenantIndicator = false;
+		$scope.deletingTenantIndicator = false;
         
         $scope.isSubmitted = function() {
         	return ($scope.testSpecification.exportPackage && ($scope.testSpecification.exportPackage.status == 'SUBMITTED' || $scope.testSpecification.exportPackage.status == 'PENDING_ITEM_EXPORT' 
@@ -12,15 +14,19 @@ tsb.controller('TestSpecificationViewController',['$scope','$state', 'loadedData
 		
 		$scope.getTenants = function() {
 			$scope.tenantSet = [];
-			angular.forEach($scope.tenantIdSet, function(tenantId) {
+			for (var i = 0; i < $scope.tenantIdSet.length; i++) {
+				tenantId = $scope.tenantIdSet[i];
 				ProgmanService.findTenant(tenantId).then(function(response) {
 					$scope.tenantSet.push(response.data);
 				});
-			});
+			}
+			$scope.addingTenantIndicator = false;
+			$scope.deletingTenantIndicator = false;
 		};
 		$scope.getTenants();
 		
 		$scope.addTenantToList = function() {
+			$scope.addingTenantIndicator = true;
 			if($scope.tenantIdSet == null) {
 				$scope.tenantIdSet = [];
 			}
@@ -33,10 +39,12 @@ tsb.controller('TestSpecificationViewController',['$scope','$state', 'loadedData
 				if (!$scope.errors || $scope.errors.length == 0) {
 					$scope.getTenants();
 				}
+				$scope.testSpecification.tenantSet = angular.copy($scope.tenantIdSet);
 			});
         };
         
 		$scope.removeTenantFromList = function(tenantId) {
+			$scope.deletingTenantIndicator = true;
 			var index = $scope.tenantIdSet.indexOf(tenantId);
 			if(index > -1) {
 				$scope.tenantIdSet.splice(index, 1);
@@ -46,6 +54,7 @@ tsb.controller('TestSpecificationViewController',['$scope','$state', 'loadedData
 				if (!$scope.errors || $scope.errors.length == 0) {
 					$scope.getTenants();
 				}
+				$scope.testSpecification.tenantSet = angular.copy($scope.tenantIdSet);
 			});
         };
         
