@@ -47,8 +47,10 @@ This run time parameter specifies the property configuration set stored in the r
 * `mna.logger.level=[OFF | ERROR | WARN | INFO | DEBUG | TRACE | ALL] (default:ERROR)` - Error log items of this level or higher are to be sent to the MNA application.
 * `mna.clean.days=30 (default)` - Clear our MNA logs after this many days
 * `mna.clean.cron=0 0 0 * * ? (default)` - Cron job entry for MNA log cleaning schedule
-* `tsb.mongo.hostname= ` - TSB Mongo DB hostname`
-* `tsb.mongo.port=27017` - Mongo DB port
+* `mna.oauth.batch.account` - Username (email address) of MNA client user used for authenticating into MNA and logging metrics information
+* `mna.oauth.batch.password=` - Password of MNA client user
+* `tsb.mongo.hostname=` - TSB Mongo DB hostname
+* `tsb.mongo.port`=27017 - Mongo DB port
 * `tsb.mongo.username=` - Mongo DB username
 * `tsb.mongo.password=` - Mongo DB password
 * `tsb.mongo.dbname=tsb-dev` - Mongo DB database name
