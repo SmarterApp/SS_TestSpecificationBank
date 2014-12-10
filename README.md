@@ -70,6 +70,15 @@ This run time parameter specifies the property configuration set stored in the r
 * `tsb.download.directory=` -  TSB's SFTP download directory
 * `tsb.export.cron.trigger=0,30 * * * * ?` - Cron to configure export frequency of test specifications 
 
+#### Clustered Environment properties
+These are *optional* properties which are used when configuring a clustered environment behind a load balancer (LB). To activate clustered environment support, simply change the active profile setenv as follows: change `spring.profiles.active` from `server.singleinstance` to `server.loadbalanced`. Furthermore, you will need to set these key/value pairs appropriately: 
+
+* `tsb.loadbalanced.url.scheme` - {this should be http or https} 
+* `tsb.loadbalanced.server.name` - {the loadbalancer’s name} 
+* `tsb.loadbalanced.server.port` - {if your server requires a port, include it here, otherwise put 80 in as the default} 
+* `tsb.loadbalanced.includeServerPortInRequestURL` - {boolean true/false value which indicates if the port should be included to resolve the server} 
+* `tsb.loadbalanced.server.rest.contextpath` - {REST context name. e.g.: "/tsb.rest"} 
+* `tsb.loadbalanced.server.webapp.contextpath` - {webapp context name. e.g.: "/tsb.webapp". Leave this blank if you are using ROOT as webapp context name} 
 ### Domain Module
 The Domain module contains all of the domain beans used to model the Test Spec Bank data as well as code used as search beans to create MongoDB queries.
 
