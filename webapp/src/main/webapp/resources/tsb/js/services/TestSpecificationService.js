@@ -68,8 +68,23 @@ tsb.factory("TestSpecificationService", function($http){
         
         getExportStatuses : function(){
             return this.getHttp().get(baseUrl + this.getResource() + '/exportStatus?_=' + Math.random()).then(this.successHandler, this.errorHandler);
-        }
+        },
 
+	    save : function(object){
+			// override with empty function
+		},
+
+		create : function(object) {
+			// override with empty function
+		},
+
+	    remove : function(object){
+	    	// override with empty function
+		},
+
+	    update : function(object){
+			// override with empty function
+		}
     };
 	var service = angular.extend({}, BaseService);
 	return angular.extend(service, child);
