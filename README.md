@@ -1,6 +1,8 @@
 # Welcome to the Test Specification Bank (TSB) Component #
 The Test Specification Bank (TSB)  component is responsible for test (assessment) specification storage, searching, and initiation of packaging. The authenticated and authorized user can search for test specifications that were published from Test Authoring, view the actual specification XML, and initiate a packaging of that specification which will bundle the XML with all related Test Item data to be compressed and stored in a remote Secure FTP host location.
 
+### Usage note: Side-Loading External Packages
+To load externally authored test packages into the TSB, you may use the “load_reg_package.pl” script available in the tsb folder of the [Administrative repository](https://bitbucket.org/sbacoss/administrative_release). Test packages will then be browsable in ART’s Select Assessment function. Refer to the script’s usage instructions for more details on script usage.
 ## License ##
 This project is licensed under the [AIR Open Source License v1.0](http://www.smarterapp.org/documents/American_Institutes_for_Research_Open_Source_Software_License.pdf).
 
@@ -8,7 +10,6 @@ This project is licensed under the [AIR Open Source License v1.0](http://www.sma
 We would be happy to receive feedback on its capabilities, problems, or future enhancements:
 
 * For general questions or discussions, please use the [Forum](http://forum.opentestsystem.org/viewforum.php?f=13).
-* Use the **Issues** link to file bugs or enhancement requests.
 * Feel free to **Fork** this project and develop your changes!
 
 ## Usage
