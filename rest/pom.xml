@@ -163,7 +163,7 @@
 						<include>*.dtd</include>
 					</schemaIncludes>
 					<generateDirectory>src/test/generated</generateDirectory>
-					<generatePackage>org.opentestsystem.authoring.testspecbank_release.generated</generatePackage>
+					<generatePackage>org.opentestsystem.authoring.testspecbank.generated</generatePackage>
 					<episode>false</episode>
 				</configuration>
 			</plugin>
