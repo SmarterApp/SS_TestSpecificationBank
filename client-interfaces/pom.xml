@@ -9,6 +9,6 @@
 	<parent>
 		<groupId>org.opentestsystem.authoring</groupId>
 		<artifactId>test-spec-bank-parent</artifactId>
-		<version>R01.00.66</version>
+		<version>R01.00.67</version>
 	</parent>
 </project>
