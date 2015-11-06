@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:mongo="http://www.springframework.org/schema/data/mongo" 
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:aop="http://www.springframework.org/schema/aop" 
+       xmlns:mvc="http://www.springframework.org/schema/mvc" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.1.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+                http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+    <bean id="userService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="org.opentestsystem.shared.security.service.UserService" />
+    </bean>
+    
+    <bean id="progManClient" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="org.opentestsystem.shared.progman.client.ProgManClient" />
+    </bean>
+
+    <bean id="restTemplate" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="org.springframework.web.client.RestOperations" />
+    </bean>
+    
+    <bean id="objectMapper" class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean" >
+        <property name="indentOutput" value="true"/>
+        <property name="simpleDateFormat" value="yyyy-MM-dd'T'HH:mm:ss.SSSZ"/>	
+    </bean>
+    
+    <bean id="testItemBankClient" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="org.opentestsystem.authoring.testspecbank.client.tib.TestItemBankClientInterface" />
+    </bean>
+    
+    
+    <bean id="tibRestTemplate" class="org.springframework.web.client.RestTemplate"/>
+    
+    <bean id="client" class="org.opentestsystem.authoring.testspecbank.client.tib.TestItemBankClient" />
+     
+         
+    <bean id="testItemBankFileTransferService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="org.opentestsystem.authoring.testspecbank.service.FileTransferService" />
+    </bean>
+    
+    <bean id="testPackagerFileTransferService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="org.opentestsystem.authoring.testspecbank.service.FileTransferService" />
+    </bean>
+    
+    <bean id="fileManagerService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="org.opentestsystem.authoring.testspecbank.service.FileManagerService" />
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean" >
+        <property name="targetObject" ref="objectMapper"/>
+        <property name="targetMethod" value="registerModule"/>
+        <property name="arguments">
+            <list>
+                <bean class="com.fasterxml.jackson.datatype.joda.JodaModule" />
+            </list>
+        </property>
+    </bean>
+
+	<import resource="classpath:persistence-context.xml" />
+	<context:component-scan base-package="org.opentestsystem.authoring.testspecbank.service,org.opentestsystem.shared.security.service,org.opentestsystem.shared.security.integration" />
+    
+	<import resource="classpath:rest-context.xml" />
+<!-- 	<import resource="classpath:mna-context.xml" /> -->
+
+    <!-- just a placeholder to override the mongo in the tests -->
+    <mongo:mongo id="tsb-mongo"/>
+	<mongo:db-factory id="mongoDbFactory" dbname="test" host="localhost" port="55556" />
+
+	<mvc:annotation-driven>
+		<mvc:argument-resolvers>
+			<bean class="org.springframework.data.web.PageableArgumentResolver" />
+		</mvc:argument-resolvers>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+			<bean class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper" ref="objectMapper" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
+	<mvc:interceptors>
+		<bean class="org.opentestsystem.shared.docs.RequestLoggingInterceptor" />
+	</mvc:interceptors>
+
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <!-- this allows for missing resources files, specifically the ones defined in env vars -->
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+        <property name="locations">
+            <list>
+                <value>classpath:test-dtd.properties</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

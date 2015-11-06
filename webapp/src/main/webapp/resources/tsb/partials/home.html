@@ -1,0 +1,15 @@
+<div class="home">
+    <div class="navCore">
+	   <ol>
+	       <li class="manageAssessments green" data-ng-click="go('testspecificationsearch')">Manage Specifications<span></span><p>Create and manage Specifications</p></li>
+        </ol>
+	</div>
+	<div class="clear"></div>
+</div>
+
+<div class="footer">
+    <div data-ng-if="buildInfo.appVersion" class="footerText">
+        Version: {{buildInfo.appVersion}}
+        <span data-ng-if="buildInfo.jenkinsBuildNumber"> (build #: {{buildInfo.jenkinsBuildNumber}})</span>
+    </div>
+</div>
