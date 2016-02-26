@@ -6,14 +6,14 @@
 	<name>Smarter Balanced #11 Test Spec Bank - Parent Project</name>
 	<artifactId>test-spec-bank-parent</artifactId>
 	<groupId>org.opentestsystem.authoring</groupId>
-	<version>R01.00.72</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Test Specification Bank</description>
 
 	<parent>
 		<groupId>org.opentestsystem.shared</groupId>
 		<artifactId>shared-build-parent</artifactId>
-		<version>0.0.7</version>
+		<version>0.0.7-SNAPSHOT</version>
 	</parent>
 
 	<modules>
@@ -25,7 +25,7 @@
 
     <properties>
         <mockito.version>1.9.5</mockito.version>
-        <sb11-shared-security.version>0.0.1</sb11-shared-security.version>
+        <sb11-shared-security.version>0.0.1-SNAPSHOT</sb11-shared-security.version>
     </properties>
 
     <scm>
