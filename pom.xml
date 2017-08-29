@@ -5,14 +5,14 @@
 	<name>Smarter Balanced #11 Test Spec Bank - Parent Project</name>
 	<artifactId>test-spec-bank-parent</artifactId>
 	<groupId>org.opentestsystem.authoring</groupId>
-	<version>3.1.1-SNAPSHOT</version>
+	<version>4.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Test Specification Bank</description>
 
 	<parent>
 		<groupId>org.opentestsystem.shared</groupId>
 		<artifactId>shared-build-parent</artifactId>
-		<version>3.1.0.RELEASE</version>
+		<version>4.0.3</version>
 	</parent>
 
 	<modules>
