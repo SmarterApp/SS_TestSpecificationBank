@@ -12,7 +12,7 @@
 	<parent>
 		<groupId>org.opentestsystem.shared</groupId>
 		<artifactId>shared-build-parent</artifactId>
-		<version>4.0.4</version>
+		<version>4.0.6</version>
 	</parent>
 
 	<modules>
@@ -24,11 +24,11 @@
 
     <properties>
         <mockito.version>1.9.5</mockito.version>
-		<progman-client.version>4.0.2</progman-client.version>
-		<rest-api-generator.version>4.0.1-SNAPSHOT</rest-api-generator.version>
-		<sb11-mna-client.version>4.0.0</sb11-mna-client.version>
-		<sb11-shared-code.version>4.0.2</sb11-shared-code.version>
-        <sb11-shared-security.version>4.0.1-SNAPSHOT</sb11-shared-security.version>
+		<progman-client.version>4.0.3</progman-client.version>
+		<rest-api-generator.version>4.0.2</rest-api-generator.version>
+		<sb11-mna-client.version>4.0.1</sb11-mna-client.version>
+		<sb11-shared-code.version>4.0.4</sb11-shared-code.version>
+        <sb11-shared-security.version>4.0.1</sb11-shared-security.version>
     </properties>
 
     <scm>
