@@ -5,14 +5,14 @@
 	<name>Smarter Balanced #11 Test Spec Bank - Parent Project</name>
 	<artifactId>test-spec-bank-parent</artifactId>
 	<groupId>org.opentestsystem.authoring</groupId>
-	<version>3.1.1-SNAPSHOT</version>
+	<version>4.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Test Specification Bank</description>
 
 	<parent>
 		<groupId>org.opentestsystem.shared</groupId>
 		<artifactId>shared-build-parent</artifactId>
-		<version>4.0.1-SNAPSHOT</version>
+		<version>4.0.6</version>
 	</parent>
 
 	<modules>
@@ -23,8 +23,12 @@
 	</modules>
 
     <properties>
-		<rest-api-generator.version>3.1.2-SNAPSHOT</rest-api-generator.version>
-		<sb11-mna-client.version>4.0.1-SNAPSHOT</sb11-mna-client.version>
+        <mockito.version>1.9.5</mockito.version>
+		<progman-client.version>4.0.3</progman-client.version>
+		<rest-api-generator.version>4.0.2</rest-api-generator.version>
+		<sb11-mna-client.version>4.0.1</sb11-mna-client.version>
+		<sb11-shared-code.version>4.0.4</sb11-shared-code.version>
+        <sb11-shared-security.version>4.0.1</sb11-shared-security.version>
     </properties>
 
     <scm>
