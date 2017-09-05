@@ -48,6 +48,7 @@
         <dependency>
             <groupId>org.opentestsystem.shared</groupId>
             <artifactId>prog-mgmnt-client</artifactId>
+            <version>${progman-client.version}</version>
         </dependency>
         
         <dependency>

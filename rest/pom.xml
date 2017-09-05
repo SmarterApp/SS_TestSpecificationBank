@@ -94,17 +94,19 @@
         <dependency>
             <groupId>org.opentestsystem.shared</groupId>
             <artifactId>monitoring-alerting.client</artifactId>
-            <version>${sb11-mna-client.version}</version>
+            <version> ${sb11-mna-client.version}</version>
         </dependency>
         
 		<dependency>
 			<groupId>org.opentestsystem.shared</groupId>
 			<artifactId>prog-mgmnt-client</artifactId>
+			<version>${progman-client.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.opentestsystem.shared</groupId>
 			<artifactId>prog-mgmnt-client-null-impl</artifactId>
+			<version>${progman-client.version}</version>
 		</dependency>
 
 		<dependency>
