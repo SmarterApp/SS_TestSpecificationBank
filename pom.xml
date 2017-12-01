@@ -29,6 +29,7 @@
 		<sb11-mna-client.version>4.0.3.RELEASE</sb11-mna-client.version>
 		<sb11-shared-code.version>4.0.7</sb11-shared-code.version>
         <sb11-shared-security.version>4.0.4</sb11-shared-security.version>
+		<tds-common-legacy.version>5.0.0.RELEASE</tds-common-legacy.version>
     </properties>
 
     <scm>
