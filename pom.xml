@@ -29,6 +29,7 @@
 		<sb11-mna-client.version>4.0.3.RELEASE</sb11-mna-client.version>
 		<sb11-shared-code.version>4.0.7</sb11-shared-code.version>
         <sb11-shared-security.version>4.0.4</sb11-shared-security.version>
+		<tds-common-legacy.version>5.0.0.RELEASE</tds-common-legacy.version>
     </properties>
 
     <scm>
@@ -112,7 +113,14 @@
             <artifactId>mockito-all</artifactId>
             <version>${mockito.version}</version>
             <scope>test</scope>
-        </dependency>       
+        </dependency>
+
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.4.0</version>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
