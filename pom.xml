@@ -64,6 +64,13 @@
 			<artifactId>sb11-shared-code</artifactId>
 			<version>${sb11-shared-code.version}</version>
 		</dependency>
+
+		<!-- Shared TDS -->
+		<dependency>
+			<groupId>org.opentestsystem.delivery</groupId>
+			<artifactId>tds-common-legacy</artifactId>
+			<version>${tds-common-legacy.version}</version>
+		</dependency>
         
         <dependency>
             <groupId>org.opentestsystem.shared</groupId>
