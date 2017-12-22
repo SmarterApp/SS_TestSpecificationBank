@@ -64,6 +64,13 @@
 			<artifactId>sb11-shared-code</artifactId>
 			<version>${sb11-shared-code.version}</version>
 		</dependency>
+
+		<!-- Shared TDS -->
+		<dependency>
+			<groupId>org.opentestsystem.delivery</groupId>
+			<artifactId>tds-common-legacy</artifactId>
+			<version>${tds-common-legacy.version}</version>
+		</dependency>
         
         <dependency>
             <groupId>org.opentestsystem.shared</groupId>
@@ -86,6 +93,12 @@
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-joda</artifactId>
 			<version>${jackson-datatype-joda.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-guava</artifactId>
+			<version>2.8.10</version>
 		</dependency>
 
 		<dependency>

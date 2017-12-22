@@ -18,13 +18,6 @@
 	</properties>
 
 	<dependencies>
-		<!-- Shared TDS -->
-		<dependency>
-			<groupId>org.opentestsystem.delivery</groupId>
-			<artifactId>tds-common-legacy</artifactId>
-			<version>${tds-common-legacy.version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
