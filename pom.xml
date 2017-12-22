@@ -5,7 +5,7 @@
 	<name>Smarter Balanced #11 Test Spec Bank - Parent Project</name>
 	<artifactId>test-spec-bank-parent</artifactId>
 	<groupId>org.opentestsystem.authoring</groupId>
-	<version>4.0.1-SNAPSHOT</version>
+	<version>4.0.1</version>
 	<packaging>pom</packaging>
 	<description>Test Specification Bank</description>
 
@@ -36,7 +36,7 @@
         <connection>scm:git:https://github.com/SmarterApp/TestSpecificationBank</connection>
         <developerConnection>scm:git:https://github.com/SmarterApp/TestSpecificationBank</developerConnection>
         <url>https://github.com/SmarterApp/TestSpecificationBank</url>
-      <tag>HEAD</tag>
+      <tag>4.0.1</tag>
   </scm>
 
 	<dependencies>
