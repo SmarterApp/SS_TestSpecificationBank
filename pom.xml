@@ -5,7 +5,7 @@
 	<name>Smarter Balanced #11 Test Spec Bank - Parent Project</name>
 	<artifactId>test-spec-bank-parent</artifactId>
 	<groupId>org.opentestsystem.authoring</groupId>
-	<version>4.0.2-SNAPSHOT</version>
+	<version>4.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Test Specification Bank</description>
 
