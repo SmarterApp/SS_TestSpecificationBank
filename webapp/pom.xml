@@ -9,7 +9,7 @@
     <parent>
         <groupId>org.opentestsystem.authoring</groupId>
         <artifactId>test-spec-bank-parent</artifactId>
-        <version>4.2.0.RELEASE</version>
+        <version>4.2.1-SNAPSHOT</version>
     </parent>
 
     <properties>
